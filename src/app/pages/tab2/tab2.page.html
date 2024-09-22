@@ -1,0 +1,25 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar color="dark">
+    <ion-title>
+      Encabezados
+    </ion-title>
+  </ion-toolbar>
+  <ion-segment scrollable mode="md" color="primary" (ionChange)="category($event)">
+
+    <ion-segment-button *ngFor="let categoria of categorias" [value]="categoria"  >
+      <ion-label class="ion-text-capitalize">{{categoria}}</ion-label>
+    </ion-segment-button>      
+  
+  </ion-segment>
+
+</ion-header>
+
+<ion-content  color="dark">
+  
+<app-noticias [noticias]="articulo"></app-noticias>
+
+<ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+</ion-infinite-scroll>
+
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Favoritos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  color="dark">
+  <h1 class="ion-text-center ion-padding full-height" *ngIf="_storage.noticias.length === 0">No Hay Favoritos</h1>  
+  <app-noticias *ngIf="_storage.noticias.length > 0"
+                [enfavoritos]="true"
+                [noticias]="_storage.noticias">
+  </app-noticias>
+</ion-content>
